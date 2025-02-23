@@ -33,6 +33,7 @@ namespace Company.Function
             return $"Hello {name}!";
         }
 
+        [Disable]
         [FunctionName("DurableFunctionsOrchestrationCSharp1_HttpStart")]
         public static async Task<HttpResponseMessage> HttpStart(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestMessage req,
