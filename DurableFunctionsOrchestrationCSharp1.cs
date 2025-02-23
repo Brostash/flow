@@ -44,7 +44,7 @@ namespace Company.Function
 
             log.LogInformation("Started orchestration with ID = '{instanceId}'.", instanceId);
 
-            return starter.CreateCheckStatusResponse(req, instance"DefaultEndpointsProtocol=https;AccountName=jonsflow;AccountKey=;EndpointSuffix=Id);
+            return starter.CreateCheckStatusResponse(req, instanceId);
         }
     }
 }
