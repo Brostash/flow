@@ -9,9 +9,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class DurableFunctionsOrchestrationCSharp1
+    public static class DurableFunction
     {
-        [FunctionName("DurableFunctionsOrchestrationCSharp1")]
+        [FunctionName("DurableFunction")]
         public static async Task<List<string>> RunOrchestrator(
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
@@ -34,18 +34,20 @@ namespace Company.Function
         }
 
         [Disable]
-        [FunctionName("DurableFunctionsOrchestrationCSharp1_HttpStart")]
+        [FunctionName("DurableFunction_HttpStart")]
         public static async Task<HttpResponseMessage> HttpStart(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestMessage req,
             [DurableClient] IDurableOrchestrationClient starter,
             ILogger log)
         {
             // Function input comes from the request content.
-            string instanceId = await starter.StartNewAsync("DurableFunctionsOrchestrationCSharp1", null);
+            string instanceId = await starter.StartNewAsync("DurableFunction", null);
 
             log.LogInformation("Started orchestration with ID = '{instanceId}'.", instanceId);
 
             return starter.CreateCheckStatusResponse(req, instanceId);
         }
+
+
     }
 }
