@@ -33,9 +33,11 @@ namespace Flow
             return $"Hello {name}!";
         }
 
+
+        //disable this function 
         [Function("DurableIso_HttpStart")]
         public static async Task<HttpResponseData> HttpStart(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
             [DurableClient] DurableTaskClient client,
             FunctionContext executionContext)
         {
