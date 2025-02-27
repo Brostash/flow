@@ -4,7 +4,7 @@ using Microsoft.DurableTask;
 using Microsoft.DurableTask.Client;
 using Microsoft.Extensions.Logging;
 
-namespace Company.Function
+namespace Flow
 {
     public static class DurableIso
     {
