@@ -1,0 +1,43 @@
+{
+  "name": "C# Azure Functions Dev Environment",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces",
+  "forwardPorts": [7071],
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // C# and Azure development
+        "ms-dotnettools.csharp",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-vscode.azure-account",
+        "ms-dotnettools.dotnet-interactive-vscode",
+        "ms-vscode.vscode-node-azure-pack",
+        "formulahendry.dotnet-test-explorer",
+        
+        // Remote development helpers
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-ssh-edit",
+        
+        // Git tools
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+        "mhutchie.git-graph",
+        
+        // Productivity
+        "github.copilot",
+        "visualstudioexptteam.vscodeintellicode",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "git.enableSmartCommit": true,
+        "git.confirmSync": false
+      }
+    }
+  },
+  "postCreateCommand": "dotnet restore"
+}
