@@ -18,8 +18,6 @@
         "ms-azuretools.vscode-azureresourcegroups",
         // Docker and DevOps
         "github.vscode-github-actions",
-        // Remote development
-        "ms-vscode-remote.remote-containers",
         // Git tools
         "eamodio.gitlens",
         "github.vscode-pull-request-github",
