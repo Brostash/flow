@@ -3,31 +3,31 @@
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces",
-  "forwardPorts": [7071],
+  "forwardPorts": [
+    7071
+  ],
   "remoteUser": "root",
   "customizations": {
     "vscode": {
       "extensions": [
         // C# and Azure development
         "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.vscode-dotnet-runtime",
         "ms-azuretools.vscode-azurefunctions",
-        "ms-vscode.azure-account",
-        "ms-dotnettools.dotnet-interactive-vscode",
-        "ms-vscode.vscode-node-azure-pack",
-        "formulahendry.dotnet-test-explorer",
-        
-        // Remote development helpers
+        "ms-azuretools.vscode-azureresourcegroups",
+        // Docker and DevOps
+        "ms-azuretools.vscode-docker",
+        "github.vscode-github-actions",
+        // Remote development
         "ms-vscode-remote.remote-containers",
-        "ms-vscode-remote.remote-ssh",
-        "ms-vscode-remote.remote-ssh-edit",
-        
         // Git tools
         "eamodio.gitlens",
         "github.vscode-pull-request-github",
         "mhutchie.git-graph",
-        
-        // Productivity
+        // Productivity and AI
         "github.copilot",
+        "github.copilot-chat",
         "visualstudioexptteam.vscodeintellicode",
         "streetsidesoftware.code-spell-checker"
       ],
