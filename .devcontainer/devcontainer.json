@@ -17,7 +17,6 @@
         "ms-azuretools.vscode-azurefunctions",
         "ms-azuretools.vscode-azureresourcegroups",
         // Docker and DevOps
-        "ms-azuretools.vscode-docker",
         "github.vscode-github-actions",
         // Remote development
         "ms-vscode-remote.remote-containers",
