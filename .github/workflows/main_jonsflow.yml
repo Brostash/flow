@@ -30,6 +30,7 @@ jobs:
         shell: bash
         run: |
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          dotnet add package Microsoft.Azure.Cosmos
           dotnet build --configuration Release --output ./output
           popd
       
