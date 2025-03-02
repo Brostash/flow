@@ -16,6 +16,7 @@
         "ms-dotnettools.vscode-dotnet-runtime",
         "ms-azuretools.vscode-azurefunctions",
         "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-cosmosdb",
         // Docker and DevOps
         "github.vscode-github-actions",
         // Git tools
