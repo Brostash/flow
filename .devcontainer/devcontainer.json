@@ -35,5 +35,5 @@
       }
     }
   },
-  "postCreateCommand": "dotnet restore"
+  "postCreateCommand": ""
 }
