@@ -1,11 +1,15 @@
+using System.Net;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.DurableTask;
 using Microsoft.DurableTask.Client;
 using Microsoft.Extensions.Logging;
 
+
+
 namespace Flow
 {
+
     public static class DurableIso
     {
         [Function(nameof(DurableIso))]
@@ -17,9 +21,7 @@ namespace Flow
             var outputs = new List<string>();
 
             // Replace name and input with values relevant for your Durable Functions Activity
-            outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Tokyo"));
-            outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Seattle"));
-            outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "London"));
+            outputs.Add(await context.CallActivityAsync<string>(nameof(DocumentResponse), null));
 
             // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
             return outputs;
@@ -31,6 +33,27 @@ namespace Flow
             ILogger logger = executionContext.GetLogger("SayHello");
             logger.LogInformation("Saying hello to {name}.", name);
             return $"Hello {name}!";
+        }
+
+
+        [Function("DocumentResponse")]
+        public static DocumentResponse RunDocumentResponse([ActivityTrigger] string name, FunctionContext executionContext)
+        {
+            var logger = executionContext.GetLogger("DocumentResponse");
+            logger.LogInformation("C# HTTP trigger function processed a request.");
+
+            var message = "Welcome to Azure Functions!";
+
+
+            // Return a response to both HTTP trigger and Azure Cosmos DB output binding.
+            return new DocumentResponse()
+            {
+                Document = new MyDocument
+                {
+                    id = System.Guid.NewGuid().ToString(),
+                    message = message
+                }
+            };
         }
 
 

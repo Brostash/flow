@@ -1,13 +1,15 @@
-using Microsoft.Azure.Functions.Worker.Builder;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Extensions.CosmosDB;
+using Microsoft.Azure.Cosmos.Fluent;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Hosting;
 
-var builder = FunctionsApplication.CreateBuilder(args);
+var builder = Host.CreateDefaultBuilder(args);
 
 builder.ConfigureFunctionsWebApplication();
 
-// Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
-// builder.Services
-//     .AddApplicationInsightsTelemetryWorkerService()
-//     .ConfigureFunctionsApplicationInsights();
+// If using Application Insights
+// builder.Services.AddApplicationInsightsTelemetryWorkerService();
 
 builder.Build().Run();

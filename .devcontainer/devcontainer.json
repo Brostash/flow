@@ -20,9 +20,7 @@
         // Docker and DevOps
         "github.vscode-github-actions",
         // Git tools
-        "eamodio.gitlens",
         "github.vscode-pull-request-github",
-        "mhutchie.git-graph",
         // Productivity and AI
         "github.copilot",
         "github.copilot-chat",
@@ -37,5 +35,5 @@
       }
     }
   },
-  "postCreateCommand": "dotnet restore"
+  "postCreateCommand": ""
 }
