@@ -8,10 +8,9 @@ namespace Flow.Models.Entities;
 public class Workflow : EntityBase
 {
 
-    public string Name { get; set; }
+    public string name { get; set; }
 
-    [JsonIgnore]
-    public List<ActionInstance> Actions { get; set; }
+    public List<ActionInstance> actionInstance { get; set; }
 
-    public List<string> ActionIds { get; set; }
+    public List<string> actionInstanceIds { get; set; }
 }

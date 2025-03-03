@@ -4,8 +4,7 @@ using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.DurableTask;
 using Microsoft.DurableTask.Client;
 using Microsoft.Extensions.Logging;
-
-namespace Flow.Models.Entities;
+using Flow.Models.Entities;
 
 public class DocumentResponse
 {

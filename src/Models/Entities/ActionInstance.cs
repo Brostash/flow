@@ -3,22 +3,20 @@ using Newtonsoft.Json.Linq;
 
 namespace Flow.Models.Entities;
 
-[JsonObject(MemberSerialization.OptIn)]
 public class ActionInstance : EntityBase
 {
     [JsonIgnore]
-    public Workflow Workflow { get; set; }
+    public Workflow workflow { get; set; }
 
-    public string WorkflowId { get; set; }
+    public string workflowId { get; set; }
 
-    public string ActionId { get; set; }
+    public string actionId { get; set; }
 
-    [JsonIgnore]
-    public Action Action { get; set; }
+    public Action action { get; set; }
 
-    public JObject Input { get; set; }
+    public JObject input { get; set; }
 
-    public JObject Output { get; set; }
+    public JObject output { get; set; }
 
-    public JObject Configuration { get; set; }
+    public JObject configuration { get; set; }
 }
